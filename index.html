@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Пример 4</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="ui.css" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="jcta.min.js"></script>
+	<script src="ui.js"></script>
+	<script src="script.js"></script>
+        <style>                    
+          .mv20 {margin: 20px 0;}
+        </style>  
+</head>	
+<body>
+	<div class='container'>
+		<div class="box-1">Поиск</div>
+		<div class="box-2">меню</div>
+ 		<div class='box-3'>
+     		<div class='col-md-8 center-block' style='float:none'>   
+                                <h2> редактируемая таблица</h2>   		  
+                                <hr>
+				<table class='table table-bordered mv20'>
+					<thead> 
+            			<tr> 
+              				<th>#</th>
+              				<th>Имя</th>
+              				<th>Возраст</th>              	        
+              				<th style='width:150px'>Должность</th> 
+							<th>Компетенции</th>             	        
+              				<th></th>              	        
+            			</tr>
+          			</thead>    
+          			<tbody data-jc="repeater__datasource" >          	
+          				<script type="text/html">
+      					    <tr data-index="$index">
+              					<td>{{index+1}}</td>
+                				<td class='edit' data-type='textbox' data-field='firstname'>{{firstname}}</td>
+                				<td class='edit' data-type='textbox' data-field='Age'>{{Age}}</td>
+                				<td class='edit' data-type='dropdown' data-field='position_id' data-source='arr_positions'>{{position_id|select(arr_positions)}}</td>
+								<td class='edit' data-type='textbox' data-field='compitetion'>{{compitetion}}</td>
+                				<td><button type='button' class='btn btn-danger btn-flat btn-xs' data-bind="rem__click:remRow"  data-id='$index' title='Удалить запись'><i class='fa fa-fw fa-remove'></i></button></td>        
+              				</tr>
+          				</script>	
+          			</tbody>	
+          			<tfooter> 
+            			<tr> 
+              				<th></th>
+              				<th><div data---="textbox__form.firstname__required:true;placeholder:Имя;class:form-control input-sm;"></div></th>
+              				<th><div data---="textbox__form.Age__required:true;placeholder:Возраст;class:form-control input-sm;"></div></th>   
+              				<th><div data---="dropdown__position_id__required:true;datasource:arr_positions;text:name;value:id;type:number;class:form-control input-sm;"></div></th>
+							<th><div data---="textbox__form.compitetion__required:true;placeholder:Компетенции;class:form-control input-sm;"></div></th>   
+              				<th><button type='button' class='btn btn-primary btn-flat btn-xs' data-bind="rem__click:addRow"  data-id='$index' title='Добавить запись'><i class='fa fa-fw fa-plus'></i></button></th>              	        
+            			</tr>
+          			</tfooter>    
+				</table>				  
+			</div>
+		</div>
+		<div class="box-4">футер</div>
+	</div>	
+</body>
+</html>

@@ -1,0 +1,26 @@
+.container {
+    display: grid;
+  grid-template-areas:
+    'header header'
+    'menu   content'
+    'footer footer';
+  grid-template-columns: 12rem 1fr;
+  grid-template-rows: 5rem 1fr 3rem;
+  }
+  [class^="box-"] {
+    border: 2px black solid;
+    display: grid;
+    place-items: center;
+  }
+  .box-1 {
+    grid-area: header;
+  }
+  .box-2 {
+    grid-area: menu;
+  }
+  .box-3 {
+    grid-area: content;
+  }
+  .box-4 {
+    grid-area: footer;
+  }
