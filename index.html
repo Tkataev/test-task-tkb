@@ -36,7 +36,7 @@
      		<div class='col-md-8 center-block' style='float:none'>   
                                 <h2> редактируемая таблица</h2>   		  
                                 <hr>
-				<table class='table table-bordered mv20'>
+				<table class='table table-bordered mv20' id="dataTable" >
 					<thead> 
             			<tr> 
               				<th>#</th>
@@ -47,7 +47,7 @@
               				<th></th>              	        
             			</tr>
           			</thead>    
-          			<tbody data-jc="repeater__datasource" >          	
+          			<tbody data-jc="repeater__datasource" " >          	
           				<script type="text/html">
       					    <tr data-index="$index">
               					<td>{{index+1}}</td>
@@ -60,6 +60,7 @@
           				</script>	
           			</tbody>	
           			<tfooter> 
+
             			<tr> 
               				<th></th>
               				<th><div data---="textbox__form.firstname__required:true;placeholder:Имя;class:form-control input-sm;"></div></th>
@@ -68,8 +69,9 @@
 							<th><div data---="textbox__form.compitetion__required:true;placeholder:Компетенции;class:form-control input-sm;"></div></th>   
               				<th><button type='button' class='btn btn-primary btn-flat btn-xs' data-bind="rem__click:addRow"  data-id='$index' title='Добавить запись'><i class='fa fa-fw fa-plus'></i></button></th>              	        
             			</tr>
-          			</tfooter>    
-				</table>				  
+          			</tfooter>   
+				</table>	
+				<button type="submit" class="shipment">Отправить</button>			  
 			</div>
 		</div>
 		<div class="box-4">футер</div>

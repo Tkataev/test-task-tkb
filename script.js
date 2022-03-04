@@ -44,3 +44,8 @@ function remRow(e) {
  datasource.splice(ind, 1);
      UPDATE('datasource'); 	
 }
+
+$('.shipment').click(
+     console.log( JSON.stringify(datasource) )
+   );
+
